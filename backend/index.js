@@ -15,8 +15,15 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: "./.env" });
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
 const server = http.createServer(app);
 const io = new Server(server);
+
 
 app.use(express.static(join(__dirname, '../frontend/build')));
 
@@ -25,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use(cors());
+
 app.use(express.json());
 app.use(express.static("public"));
 
