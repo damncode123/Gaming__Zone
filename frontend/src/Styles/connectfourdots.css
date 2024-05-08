@@ -1,0 +1,125 @@
+*{
+    /* margin: 0px;
+    padding: 0px; */
+    text-align: center; 
+    /* overflow-y: hidden; */
+}
+body{
+    background-color:#15616d;
+}
+.mainc
+{
+    margin-top:20px;
+    font-size:xx-large;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+.title
+{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    
+}
+.board
+{
+    width: 342px;
+    height: 350px;
+    /* padding-top: 1px; */
+    margin: auto;
+    border-left: 12px solid #d00000;
+    border-right: 12px solid #d00000;
+    border-bottom: 12px solid #d00000;
+    border-radius: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: flex-start; */
+    background:#03045e;
+     
+}
+.row{
+    background:#03045e;
+    margin-left:6px;
+    height: 45px;
+    margin-top: 3px;
+}
+.slot {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: lightgray;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 100px;
+    font-family: sans-serif;
+    margin-right: 4px;
+}
+.img
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.btn2 {
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #40bccf;
+    color: #15616d;
+    background-color: #ffffff;
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s;
+    margin: 20px;
+  }
+  
+  .btn2:hover {
+    background-color: #15616d;
+    color: #ffffff;
+  }
+  .game-over-message
+  {
+    margin-top: 15px;
+  }
+  .top-container1 {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 40px;
+    gap: 1000px;
+    font-size: x-large;
+    color: #ffffff;
+  }
+  /* Basic button styles */
+  .btn-copy1 {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #09bdbd;
+    border-radius: 25px; /* Larger border-radius for rounded corners */
+    color: #fff;
+    background-color: #196182;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-copy1:hover {
+    background-color: #09b0d5;
+    border-color: #a6c4c0;
+  }
+  .info-left1{
+    margin-left: 40px;
+
+  }
+  

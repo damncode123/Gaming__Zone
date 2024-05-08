@@ -1,0 +1,16 @@
+.bg-image {
+  background-image: url('../Assests/joingame.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .bg-image {
+      background-size: contain; /* Change background size to contain */
+  }
+}

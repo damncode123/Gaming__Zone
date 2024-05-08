@@ -1,0 +1,112 @@
+.main1{
+    /* background-color:#0d3b66; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.title1
+{
+    text-align: center;
+    height: 70px;
+    /* padding-top: 50px; */
+    font-size:xx-large;
+    font-weight:bold;
+    text-decoration: solid underline;
+    color: #ffffff;
+}
+.btn1 {
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    background-color: #ffffff;
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s;
+    margin: 30px;
+  }
+  
+  .btn1:hover {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+  .mainsqaure1
+  {
+    height:385px;
+    width:400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+  }
+  /* .row1
+  {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  .smallsquare1 {
+    width: 120px;
+    height: 120px;
+    background-color: #0d3b66;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    font-size: 76px;
+    font-weight: bold;
+    color: #2a9d8f; 
+  }
+  .status1 {
+    text-align: center;
+    font-size:x-large;
+    font-weight:500;
+    margin: 5px 0;
+    color:black;
+  }
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    gap: 900px;
+    font-size: x-large;
+    color: #ffffff;
+  }
+  /* Basic button styles */
+  .btn-copy {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #09bdbd;
+    border-radius: 25px; /* Larger border-radius for rounded corners */
+    color: #fff;
+    background-color: #196182;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-copy:hover {
+    background-color: #09b0d5;
+    border-color: #a6c4c0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

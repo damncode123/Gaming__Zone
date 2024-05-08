@@ -1,0 +1,16 @@
+.mainlogin {
+  background-image: url('../Assests/login_image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .mainlogin {
+      background-size: contain; /* Change background size to contain */
+  }
+}
