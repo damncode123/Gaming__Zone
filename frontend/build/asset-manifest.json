@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.09ee34a3.css",
+    "main.js": "/static/js/main.db046451.js",
+    "static/js/787.d26c04ea.chunk.js": "/static/js/787.d26c04ea.chunk.js",
+    "static/media/login_image.jpg": "/static/media/login_image.4f578609aa0389723452.jpg",
+    "static/media/joingame.jpg": "/static/media/joingame.e1b25be59a0745c42ea5.jpg",
+    "static/media/tictactoe.png": "/static/media/tictactoe.f4f4c574367a134fe13f.png",
+    "static/media/dashboard image.png": "/static/media/dashboard image.2800a7d1693de58122f9.png",
+    "static/media/memoryimage10.png": "/static/media/memoryimage10.61b257964ec800079a0c.png",
+    "static/media/memoryimage4.png": "/static/media/memoryimage4.0d27c12817521895f7ea.png",
+    "static/media/memoryimage6.png": "/static/media/memoryimage6.4f55984ee4587ac2aa43.png",
+    "static/media/memoryimage5.png": "/static/media/memoryimage5.d26b3773d6b17d0bb345.png",
+    "static/media/memoryimage8.png": "/static/media/memoryimage8.88ee93d732f3c914ad0b.png",
+    "static/media/memoryimage9.png": "/static/media/memoryimage9.dece160a639ab869b58a.png",
+    "static/media/img1.png": "/static/media/img1.2233226b3c0d9f8951d4.png",
+    "static/media/memoryimage1.png": "/static/media/memoryimage1.09af5d0ceecfd55b483e.png",
+    "static/media/memoryimage2.png": "/static/media/memoryimage2.49b1a000b6274fb53359.png",
+    "static/media/memoryimage3.png": "/static/media/memoryimage3.7fde56f4abfd09da0b88.png",
+    "static/media/memoryimage7.png": "/static/media/memoryimage7.b4f337901b060c1f7a82.png",
+    "static/media/reddisc.png": "/static/media/reddisc.ef622b84076f21068339.png",
+    "static/media/blackdisc.png": "/static/media/blackdisc.cf4f5ecbd327735eca32.png",
+    "index.html": "/index.html",
+    "main.09ee34a3.css.map": "/static/css/main.09ee34a3.css.map",
+    "main.db046451.js.map": "/static/js/main.db046451.js.map",
+    "787.d26c04ea.chunk.js.map": "/static/js/787.d26c04ea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09ee34a3.css",
+    "static/js/main.db046451.js"
+  ]
+}
