@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.09ee34a3.css",
-    "main.js": "/static/js/main.db046451.js",
+    "main.js": "/static/js/main.b410ffcf.js",
     "static/js/787.d26c04ea.chunk.js": "/static/js/787.d26c04ea.chunk.js",
     "static/media/login_image.jpg": "/static/media/login_image.4f578609aa0389723452.jpg",
     "static/media/joingame.jpg": "/static/media/joingame.e1b25be59a0745c42ea5.jpg",
@@ -22,11 +22,11 @@
     "static/media/blackdisc.png": "/static/media/blackdisc.cf4f5ecbd327735eca32.png",
     "index.html": "/index.html",
     "main.09ee34a3.css.map": "/static/css/main.09ee34a3.css.map",
-    "main.db046451.js.map": "/static/js/main.db046451.js.map",
+    "main.b410ffcf.js.map": "/static/js/main.b410ffcf.js.map",
     "787.d26c04ea.chunk.js.map": "/static/js/787.d26c04ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09ee34a3.css",
-    "static/js/main.db046451.js"
+    "static/js/main.b410ffcf.js"
   ]
 }

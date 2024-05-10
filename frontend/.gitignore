@@ -9,6 +9,7 @@
 /coverage
 /.env
 
+/bulid
 
 # misc
 .DS_Store

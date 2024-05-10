@@ -69,13 +69,13 @@ function Memory() {
       socketRef.current.on(ACTIONS.JOINED, ({ clients, username }) => {
         if (username !== location.state?.username) {
           console.log(`${username} joined the room`);
-          toast.success(`${username} joined the room`);
+          // toast.success(`${username} joined the room`);
         }
         setClients(clients);
       });
 
       socketRef.current.on(ACTIONS.DISCONNECTED, ({ socketId, username }) => {
-        toast.success(`${username} left the room`);
+        // toast.success(`${username} left the room`);
         setClients((prev) => {
           return prev.filter((client) => client.socketId !== socketId);
         });
