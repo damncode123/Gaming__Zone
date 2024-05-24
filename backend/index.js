@@ -6,7 +6,7 @@ import { mongoose } from "mongoose";
 import { Server } from "socket.io";
 import ACTIONS from "../frontend/src/action.js";
 import AuthRoutes from "./route/auth.route.js";
-const path = require("path");
+import path from "path";
 dotenv.config({ path: "./.env" });
 
 const app = express();
