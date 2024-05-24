@@ -6,7 +6,12 @@ import { mongoose } from "mongoose";
 import { Server } from "socket.io";
 import ACTIONS from "../frontend/src/action.js";
 import AuthRoutes from "./route/auth.route.js";
-import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 dotenv.config({ path: "./.env" });
 
 const app = express();
@@ -15,10 +20,11 @@ const io = new Server(server);
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.use(express.static(join(__dirname, '../frontend/build')));
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
+  res.sendFile(join(__dirname, '../frontend/build', 'index.html'));
 });
 
 app.use(express.json());
