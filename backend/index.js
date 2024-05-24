@@ -1,39 +1,28 @@
+import path from "path";
 import express from "express";
 import cors from "cors";
 import http from "http";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import { mongoose } from "mongoose";
 import { Server } from "socket.io";
 import ACTIONS from "../frontend/src/action.js";
 import AuthRoutes from "./route/auth.route.js";
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+const __dirname = path.resolve();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-dotenv.config({ path: "./.env" });
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Configure CORS
-const corsOptions = {
-  origin: true,
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-// Serve static files from the React frontend app
-app.use(express.static(join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, '../frontend/build', 'index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 const userSocketMap = {};
@@ -51,14 +40,15 @@ function getAllConnectedClients(roomId) {
 
 io.on("connection", (socket) => {
   console.log("Socket Connected ", socket.id);
-
   socket.on(ACTIONS.JOIN, ({ roomId, username }) => {
     const existingSocketId = Object.keys(userSocketMap).find(
       (socketId) => userSocketMap[socketId] === username
     );
 
     if (existingSocketId) {
-      socket.emit("duplicate_connection", { message: "Duplicate connection detected." });
+      socket.emit("duplicate_connection", {
+        message: "Duplicate connection detected.",
+      });
       return;
     }
 
@@ -80,7 +70,9 @@ io.on("connection", (socket) => {
   });
 
   socket.on(ACTIONS.UPDATE_SCORE, ({ roomId, player1Score, player2Score }) => {
-    socket.to(roomId).emit(ACTIONS.SCORE_UPDATED, { player1Score, player2Score });
+    socket
+      .to(roomId)
+      .emit(ACTIONS.SCORE_UPDATED, { player1Score, player2Score });
   });
 
   socket.on(ACTIONS.CHANGE_PLAYER, ({ roomId, data }) => {
@@ -102,13 +94,14 @@ io.on("connection", (socket) => {
 
 app.use("/GamingZone/auth", AuthRoutes);
 
-const PORT = process.env.PORT || 12000;
+const PORT = process.env.PORT || 5000;
 const main = async () => {
   try {
     await mongoose.connect(process.env.MONGO_DB, {
       dbName: "Home-Hive",
-      retryWrites: true,
-      w: 'majority',
+      // Remove deprecated options and add retryWrites and w options
+      useNewUrlparser: true,
+      useUnifiedTopoLogy: true,
     });
 
     server.listen(PORT, () => {
