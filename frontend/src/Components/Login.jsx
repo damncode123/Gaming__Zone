@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import '../Styles/login.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../Styles/login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const url = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("http://localhost:5000/GamingZone/auth/login", {
+      const response = await fetch(`${url}/GamingZone/auth/login`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
         const loggedIn = await response.json();
-        localStorage.setItem('user', JSON.stringify(loggedIn.user));
-        localStorage.setItem('token', loggedIn.token);
+        localStorage.setItem("user", JSON.stringify(loggedIn.user));
+        localStorage.setItem("token", loggedIn.token);
         navigate("/games");
       } else {
         const errorMessage = await response.json();
@@ -33,17 +33,19 @@ const Login = () => {
       setError("An error occurred while logging in.");
     }
   };
- const handlelogin =()=>{
-    if(error===null){
-      navigate("/games")
-    }
-    else{
+  const handlelogin = () => {
+    if (error === null) {
+      navigate("/games");
+    } else {
       alert(error);
     }
- }
+  };
   return (
-    <div className='mainlogin'>
-      <form onSubmit={handleSubmit} className="bg-white dark:bg-zinc-900 shadow-2xl rounded-2xl overflow-hidden border-4 border-blue-400 dark:border-blue-800">
+    <div className="mainlogin">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white dark:bg-zinc-900 shadow-2xl rounded-2xl overflow-hidden border-4 border-blue-400 dark:border-blue-800"
+      >
         <div className="px-8 py-10 md:px-10">
           <h2 className="text-4xl font-extrabold text-center text-zinc-800 dark:text-white">
             Welcome Back!
@@ -53,7 +55,10 @@ const Login = () => {
           </p>
           <div className="mt-10">
             <div className="relative">
-              <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="email">
+              <label
+                className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -67,7 +72,10 @@ const Login = () => {
               />
             </div>
             <div className="mt-6">
-              <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="password">
+              <label
+                className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200"
+                htmlFor="password"
+              >
                 Password
               </label>
               <input
@@ -94,13 +102,15 @@ const Login = () => {
         <div className="px-8 py-4 bg-blue-200 dark:bg-zinc-800">
           <div className="text-sm text-blue-900 dark:text-blue-300 text-center">
             Don't have an account?
-            <Link className="font-medium underline" to="/games/Signup">Sign up</Link>
+            <Link className="font-medium underline" to="/games/Signup">
+              Sign up
+            </Link>
           </div>
         </div>
       </form>
       {/* {error && <p>{error}</p>} */}
     </div>
   );
-}
+};
 
 export default Login;
