@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import '../Styles/login.css';
+import "../Styles/login.css";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    password: ""
+    password: "",
   });
   const navigate = useNavigate();
 
@@ -14,20 +14,22 @@ const Signup = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
+
+  const url = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/GamingZone/auth/register", {
+      const response = await fetch(`${url}/GamingZone/auth/register`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -39,8 +41,11 @@ const Signup = () => {
   };
 
   return (
-    <div className='mainlogin'>
-      <form onSubmit={handleSubmit} className="bg-white dark:bg-zinc-900 shadow-2xl rounded-2xl overflow-hidden border-4 border-blue-400 dark:border-blue-800">
+    <div className="mainlogin">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white dark:bg-zinc-900 shadow-2xl rounded-2xl overflow-hidden border-4 border-blue-400 dark:border-blue-800"
+      >
         <div className="px-8 py-10 md:px-10">
           <h2 className="text-4xl font-extrabold text-center text-zinc-800 dark:text-white">
             Welcome!
@@ -113,7 +118,9 @@ const Signup = () => {
         <div className="px-8 py-4 bg-blue-200 dark:bg-zinc-800">
           <div className="text-sm text-blue-900 dark:text-blue-300 text-center">
             Do have an account?
-            <Link className="font-medium underline" to="/games/Login">Login</Link>
+            <Link className="font-medium underline" to="/games/Login">
+              Login
+            </Link>
           </div>
         </div>
       </form>
