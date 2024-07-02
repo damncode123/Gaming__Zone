@@ -7,7 +7,7 @@ import { mongoose } from "mongoose";
 import { Server } from "socket.io";
 import ACTIONS from "../frontend/src/action.js";
 import AuthRoutes from "./route/auth.route.js";
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -19,11 +19,11 @@ app.use(cors());
 app.use(express.json());
 // app.use(express.static("public"));
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
+// });
 
 const userSocketMap = {};
 
