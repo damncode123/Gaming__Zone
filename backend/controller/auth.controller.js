@@ -87,4 +87,12 @@ const Register = async (req, res) => {
       res.status(500).json({ error: err.message });
     }
   };
-  export { Register, login };
+
+  const Home = async(req, res) => {
+    try{
+      res.send("LIVE HO GYA")
+    } catch(e) {
+      console.error(e);
+    }
+  }
+  export { Register, login, Home };
