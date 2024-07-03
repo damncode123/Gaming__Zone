@@ -92,7 +92,7 @@ const Register = async (req, res) => {
     try{
       res.send("LIVE HO GYA")
     } catch(e) {
-      console.error(e);
+      console.error("bhai error hai", e);
     }
   }
   export { Register, login, Home };
